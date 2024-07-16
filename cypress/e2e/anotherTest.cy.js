@@ -1,7 +1,11 @@
-describe('Tentando acessar o sauce labs', () => {
-  it('Valida que é possibel interagir com minha aplicação', () => {
-    cy.visit('https://google.com');
+describe('Valida que é possivel interagir com o site do Ferreira Costa', () => {
+  it('É possivel interagir com os produtos que estão na area de apresentação', () => {
+    cy.visit('https://www.ferreiracosta.com/');
 
-    cy.get('[id=APjFqb]').type('Hello world');
+    cy.get('[id=searchProduct]').type('Cadeira tramontina');
+    
+    cy.get('[data-cy=searchh-product-hyperlink]').click();
+    
+    cy.get('[data-cy=button-close-modal-cookie]').click();
   })
 })
